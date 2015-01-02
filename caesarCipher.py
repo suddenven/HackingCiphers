@@ -1,53 +1,52 @@
-#Caesar Cipher
+# Caesar Cipher
+# http://inventwithpython.com/hacking (BSD Licensed)
 
 import pyperclip
 
-#The string to be encrypted
-message = input('Enter message:')
+# the string to be encrypted/decrypted
+message = 'This is my secret message.'
 
-#Every possible symbol
-LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ1234567890'
-letterCount = str(len(LETTERS))
+# the encryption/decryption key
+key = 13
 
-#The encryption key
-key = int(input('Enter an integer between 0 and ' + letterCount + ', inclusive:'))
+# tells the program to encrypt or decrypt
+mode = 'encrypt' # set to 'encrypt' or 'decrypt'
 
-#Encrypt or Decrypt?
-mode = input('Encrypt or Decrypt:')
-mode = mode.lower()
+# every possible symbol that can be encrypted
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-#Every possible symbol
-LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
-
-#Stores the switched form of the message
+# stores the encrypted/decrypted form of the message
 translated = ''
 
-#Capitalize the message
+# capitalize the string in message
 message = message.upper()
 
-#Run the decryption code
+# run the encryption/decryption code on each symbol in the message string
 for symbol in message:
     if symbol in LETTERS:
-        #Get the number for this symbol
-        num = LETTERS.find(symbol)
+        # get the encrypted (or decrypted) number for this symbol
+        num = LETTERS.find(symbol) # get the number of the symbol
         if mode == 'encrypt':
             num = num + key
         elif mode == 'decrypt':
             num = num - key
-        #handle wraparound
+
+        # handle the wrap-around if num is larger than the length of
+        # LETTERS or less than 0
         if num >= len(LETTERS):
             num = num - len(LETTERS)
         elif num < 0:
             num = num + len(LETTERS)
 
-        #add the symbol
+        # add encrypted/decrypted number's symbol at the end of translated
         translated = translated + LETTERS[num]
 
     else:
+        # just add the symbol without encrypting/decrypting
         translated = translated + symbol
 
-# print translation to the screen
+# print the encrypted/decrypted string to the screen
 print(translated)
 
-#Copy the translated string to the clipboard
+# copy the encrypted/decrypted string to the clipboard
 pyperclip.copy(translated)
