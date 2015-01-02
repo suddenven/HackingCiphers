@@ -16,8 +16,7 @@ for key in range(len(LETTERS)):
 
             if num < 0:
                 num = num + len(LETTERS)
-            elif num >= 0:
-                num = num - len(LETTERS)
+           
 
             translated = translated + LETTERS[num]
 
