@@ -5,15 +5,16 @@ import pyperclip
 #The string to be encrypted
 message = input('Enter message:')
 
+#Every possible symbol
+LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ1234567890,./;!@#$%^&*()_+-=[]{}|'
+letterCount = str(len(LETTERS))
+
 #The encryption key
-key = int(input('Enter an integer between 0 and 25, inclusive:'))
+key = int(input('Enter an integer between 0 and ' + letterCount + ', inclusive:'))
 
 #Encrypt or Decrypt?
 mode = input('Encrypt or Decrypt:')
 mode = mode.lower()
-
-#Every possible symbol
-LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'
 
 #Stores the switched form of the message
 translated = ''
