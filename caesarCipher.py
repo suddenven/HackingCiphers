@@ -6,7 +6,7 @@ import pyperclip
 message = input('Enter message:')
 
 #The encryption key
-key = input('Enter an integer between 0 and 25, inclusive')
+key = int(input('Enter an integer between 0 and 25, inclusive:'))
 
 #Encrypt or Decrypt?
 mode = input('Encrypt or Decrypt:')
