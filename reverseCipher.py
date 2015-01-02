@@ -1,6 +1,6 @@
 #Reverse Cipher
 
-message = '.daed era meht fo owt fi ,terces a peek nac eerhT'
+message = input('Enter Message:')
 
 translated = ''
 
