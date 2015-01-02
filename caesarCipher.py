@@ -6,7 +6,7 @@ import pyperclip
 message = input('Enter message:')
 
 #Every possible symbol
-LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ1234567890,./;!@#$%^&*()_+-=[]{}|:<>?~`'
+LETTERS = 'ABCDEFGHIKLMNOPQRSTUVWXYZ1234567890'
 letterCount = str(len(LETTERS))
 
 #The encryption key
