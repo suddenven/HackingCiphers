@@ -32,7 +32,7 @@ def encryptMessage(key, message):
             ciphertext[col] += message[pointer]
 
             #move pointer over
-            pointer += key
+            pointer += key + 1
 
     #Convert the ciphertext list into a single string value and return it.
     return ''.join(ciphertext)
