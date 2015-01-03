@@ -42,3 +42,12 @@ def decryptMessage(key, message):
 
         # If there are no more columns OR we're at a shaded box, go back to
         # the first column and the next row.
+        if (col == numColumns) or (col == numColumns -1 and row >= numRows - numShadedBoxes):
+            col = 0
+            row += 1
+    return ''.join(plaintext)
+
+# Makes the program run if it is run.
+
+if __name__ == '__main__':
+    main()
