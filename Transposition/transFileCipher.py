@@ -16,10 +16,8 @@ def main():
     if myMode == 'encrypt':
         outputFilename = inputFilename + '.encrypted.txt'
 
-    elif myMode == 'decrypt':
+    if myMode == 'decrypt':
         outputFilename = inputFilename + '.decrypted.txt'
-    
-   
 
     # If the file does not exist, terminate early
     if not os.path.exists(inputFilename):
@@ -42,4 +40,21 @@ def main():
 
     # Measure how long it takes
     startTime = time.time()
+    if myMode == 'encrypt':
+        translated = encryptMessage(myKey, content)
+    elif myMode == 'decrypt':
+        translated = decryptMessage(myKey, content)
+    totalTime = round(time.time() - startTime, 2)
+    print('%sion time: %s seconds' % (myMode.title(), totalTime))
     
+    # write out the translated message to the output file.
+    outputFileObj = open(outputFilename, 'w')
+    outputFileObj.write(translated)
+    outputFileObj.close()
+
+    print('Done %sing % (%characters).' % (myMode, inputFilename, len(content)))
+    print('%sed file is %s.' (myMode.title(), outputFileName))
+
+# Make it run
+if __name__ = '__main__':
+    main() 
