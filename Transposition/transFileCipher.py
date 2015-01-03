@@ -6,6 +6,8 @@ from transDecrypt import decryptMessage
 
 def main():
     inputFilename = input('File name: ')
+    inputFilename = inputFilename[:len(inputFilename) - 4]
+    
 
     # Be careful. Tis will overwrite that file
     myMode = input('Encrypt or decrypt: ')
@@ -33,7 +35,7 @@ def main():
 
     # Read in the message from the input file
     fileObj = open(inputFilename)
-    content = fileOBJ.read()
+    content = fileObj.read()
     fileObj.close()
 
     print('%sing...' % (myMode.title()))
@@ -52,9 +54,9 @@ def main():
     outputFileObj.write(translated)
     outputFileObj.close()
 
-    print('Done %sing % (%characters).' % (myMode, inputFilename, len(content)))
-    print('%sed file is %s.' (myMode.title(), outputFileName))
+    print('Done %sing %s (%s characters).' % (myMode, inputFilename, len(content)))
+    print('%sed file is %s.' (myMode.title(), str(outputFilename)))
 
 # Make it run
-if __name__ = '__main__':
+if __name__ == '__main__':
     main() 
