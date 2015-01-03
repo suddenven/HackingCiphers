@@ -6,7 +6,7 @@ from transDecrypt import decryptMessage
 
 def main():
     inputFilename = input('File name: ')
-    inputFilename = inputFilename[:len(inputFilename) - 4]
+    
     
 
     # Be careful. Tis will overwrite that file
@@ -16,10 +16,10 @@ def main():
 
     # This sets the file name
     if myMode == 'encrypt':
-        outputFilename = inputFilename + '.encrypted.txt'
+        outputFilename = inputFilename[:len(inputFilename) - 4] + '.encrypted.txt'
 
     if myMode == 'decrypt':
-        outputFilename = inputFilename + '.decrypted.txt'
+        outputFilename = inputFilename[:len(inputFilename) - 4] + '.decrypted.txt'
 
     # If the file does not exist, terminate early
     if not os.path.exists(inputFilename):
@@ -53,10 +53,10 @@ def main():
     outputFileObj = open(outputFilename, 'w')
     outputFileObj.write(translated)
     outputFileObj.close()
+    outputFilename = outputFilename
 
     print('Done %sing %s (%s characters).' % (myMode, inputFilename, len(content)))
-    print('%sed file is %s.' (myMode.title(), str(outputFilename)))
-
+   
 # Make it run
 if __name__ == '__main__':
     main() 
