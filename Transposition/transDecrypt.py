@@ -24,3 +24,21 @@ def decryptMessage(key, message):
 
     # Number of rows
     numRows = key
+
+    # Number of "shaded boxes" in the last "column"
+    numShadedBoxes = (numColumns * numRows) - len(message)
+
+    # Each string in plaintext represents a column in the grid.
+    plaintext = [''] * numColumns
+
+    # the col and row variables point to where in the grid the next
+    # character in the encrypted message will go.
+    col = 0
+    row = 0
+
+    for symbol in message:
+        plaintext[col] += symbol
+        col += 1 # point to next column
+
+        # If there are no more columns OR we're at a shaded box, go back to
+        # the first column and the next row.
