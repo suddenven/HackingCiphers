@@ -6,8 +6,6 @@ from transDecrypt import decryptMessage
 
 def main():
     inputFilename = input('File name: ')
-    
-    
 
     # Be careful. Tis will overwrite that file
     myMode = input('Encrypt or decrypt: ')
