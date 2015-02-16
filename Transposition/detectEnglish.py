@@ -15,14 +15,14 @@ def loadDictionary():
     dictionaryFile = open('dictionary.txt')
     englishWords = {}
     for word in dictionaryFile.read().split('\n'):
-        englishWords[word] = none
+        englishWords[word] = None
     dictionaryFile.close()
     return englishWords
 
 ENGLISH_WORDS = loadDictionary()
 
 def getEnglishCount(message):
-    message = Message.upper()
+    message = message.upper()
     message = removeNonLetters(message)
     possibleWords = message.split()
 
