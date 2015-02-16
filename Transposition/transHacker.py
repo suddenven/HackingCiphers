@@ -31,4 +31,12 @@ def hackTransposition(message):
 
         decryptedText = transDecrypt.decryptMessage(key, message)
 
-        
+        if detectEnglish.isEnglish(decryptedText):
+            # Check with user to see if the decrypted key has been found
+            print()
+            print('Possible encryption hack:')
+            print('Key %s: %s' % (key, decryptedText[:100]))
+            print()
+            print('Enter D for done, or just press Enter to continue hacking:')
+            response = input('> ')
+            
