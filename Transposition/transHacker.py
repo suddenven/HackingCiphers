@@ -15,7 +15,7 @@ def main():
     else:
         print('Copying hacked message to clipboard:')
         print(hackedMessage)
-        pyperclip.copy(hackedMessage):
+        pyperclip.copy(hackedMessage)
 
 
 def hackTransposition(message):
