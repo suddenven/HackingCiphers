@@ -22,7 +22,7 @@ def loadDictionary():
 ENGLISH_WORDS = loadDictionary()
 
 def getEnglishCount(message):
-    message = Message.upper()
+    message = message.upper()
     message = removeNonLetters(message)
     possibleWords = message.split()
 
