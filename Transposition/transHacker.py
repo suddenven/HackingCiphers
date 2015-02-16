@@ -24,3 +24,11 @@ def hackTransposition(message):
     # Python programs can be stopped at any time by pressing Ctrl-C (on Windows)
     # or Ctrl-D (on Mac and Linux)
     print('(Press Ctrl-C or Ctrl-D to quit at any time.)')
+
+    # brute-force by looping through every possible key
+    for key in range(1, len(message)):
+        print('Trying key #%s...' % (key))
+
+        decryptedText = transDecrypt.decryptMessage(key, message)
+
+        
