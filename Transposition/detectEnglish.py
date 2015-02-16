@@ -15,7 +15,7 @@ def loadDictionary():
     dictionaryFile = open('dictionary.txt')
     englishWords = {}
     for word in dictionaryFile.read().split('\n'):
-        englishWords[word] = none
+        englishWords[word] = None
     dictionaryFile.close()
     return englishWords
 
