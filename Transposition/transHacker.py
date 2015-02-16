@@ -39,4 +39,11 @@ def hackTransposition(message):
             print()
             print('Enter D for done, or just press Enter to continue hacking:')
             response = input('> ')
-            
+
+            if response.strip().upper().startswith('D'):
+                return decryptedText
+
+    return None
+
+if __name__ == '__main__':
+    main()
