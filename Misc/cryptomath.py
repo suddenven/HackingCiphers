@@ -16,7 +16,7 @@ def findModInverse(a, m):
         return None # No mod inverse if a & m aren't relatively prime
 
     # Calculate using the Extended Euclidean Algorithm:
-    u1, u2, u3 = 1, 0, 1
+    u1, u2, u3 = 1, 0, a
     v1, v2, v3 = 0, 1, m
     while v3 != 0:
         q = u3 // v3 # // is integer division
