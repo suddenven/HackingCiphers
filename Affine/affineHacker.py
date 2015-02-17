@@ -51,7 +51,7 @@ def hackAffine(message):
 
             if response.strip().upper().startswith('D'):
                 return decryptedText
-    return none
+    return None
 
 if __name__ == '__main__':
     main()
