@@ -50,3 +50,31 @@ def encryptMessage(key, message):
         else:
             ciphertext += symbol # Just append this symbol unencrypted
     return ciphertext
+
+
+def decryptMessage(key, message):
+    keyA, keyB =getKeyParts(key)
+    checkKeys(keyA, keyB, 'decrypt')
+    plaintext = ''
+    modInverseOfKeyA = cryptomath.findModInverse(keyA, len(SYMBOLS))
+
+    for symbol in message:
+        if symbol in SYMBOLS:
+            # decrypt this symbol
+            symIndex = SYMBOLS.find(symbol)
+            plaintext += Symbols[(symIndex -keyB) * modInverseOfKeyA % len(SYMBOLS)]
+        else:
+            plaintext += symbol
+    return plaintext
+
+
+def getRandomKey():
+    while True:
+        keyA = random.randint(2, len(SYMBOLS))
+        keyB = random.randing(2, len(SYMBOLS))
+        if cryptomath.gcd(keyA, len(SYMBOLS)) == 1:
+            return keyA * len(SYMBOLS) + keyB
+
+
+if __name == '__main__':
+    main()
