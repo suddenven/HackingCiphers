@@ -22,3 +22,17 @@ def main():
 
 
 def getKeyParts(key):
+    keyA = key // len(SYMBOLS)
+    keyB = key % len(SYMBOLS)
+    return (keyA, keyB)
+
+
+def checkKeys(keyA, keyB, mode):
+    if keyA == 1 and mode == 'encrypt':
+        sys.exit('The affine cipher becomes incredibly weak when key A is set to 1. Choose a different key.')
+    if keyB == 0 and mode == 'encrypt':
+        sys.exit('The affine cipher becomes incredibly weak when key B is set to 0. Choose a different key.')
+    if keyA < 0 or keyB < 0 or keyB > len(SYMBOLS) - 1:
+        sys.exit('Key A must be greater than 0 and Key B must be between 0 and %s.' % (len(SYMBOLS) - 1))
+    if cryptomath.gcd(keyA, len(SYMBOLS)) != 1:
+        sys.exit('Key A (%s) and the symbol set size (%s) are not relatively prime. Choose a different key.' % (keyA, len(SYMBOLS)))
