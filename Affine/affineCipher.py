@@ -2,7 +2,7 @@
 #
 
 import sys, pyperclip, cryptomath, random
-SYMBOLS = """ !'#$%&'()*=,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'abcdefghijklmnopqrstuvwxyz{|}~""" # Note the space at the front
+SYMBOLS = """ !"#$%&'()*=,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'abcdefghijklmnopqrstuvwxyz{|}~""" # Note the space at the front
 
 
 def main():
@@ -76,5 +76,5 @@ def getRandomKey():
             return keyA * len(SYMBOLS) + keyB
 
 
-if __name == '__main__':
+if __name__ == '__main__':
     main()
