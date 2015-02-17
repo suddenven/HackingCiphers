@@ -62,7 +62,7 @@ def decryptMessage(key, message):
         if symbol in SYMBOLS:
             # decrypt this symbol
             symIndex = SYMBOLS.find(symbol)
-            plaintext += Symbols[(symIndex -keyB) * modInverseOfKeyA % len(SYMBOLS)]
+            plaintext += SYMBOLS[(symIndex -keyB) * modInverseOfKeyA % len(SYMBOLS)]
         else:
             plaintext += symbol
     return plaintext
