@@ -6,7 +6,7 @@ SYMBOLS = """ !"#$%&'()*=,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_'ab
 
 
 def main():
-    myMessage = """"A computer would deserve to be called intelligent if it could deceive a human into believing that it was human." -Alan TuringfX<*h>}(rTH<Rh()?<?T]TH=T<rh<tT<*_))T?<ISrT))I~TSr<Ii<Ir<*h()?<?T*TI=T<_<4(>_S<ISrh<tT)IT=IS~<r4_r<Ir<R_]<4(>_SEf<0X)_S<k(HIS~"""
+    myMessage = """"fX<*h>}(rTH<Rh()?<?T]TH=T<rh<tT<*_))T?<ISrT))I~TSr<Ii<Ir<*h()?<?T*TI=T<_<4(>_S<ISrh<tT)IT=IS~<r4_r<Ir<R_]<4(>_SEf<0X)_S<k(HIS~"""
     myKey = 2023
     myMode = 'decrypt' # set to 'encrypt' or 'decrypt'
 
@@ -62,7 +62,7 @@ def decryptMessage(key, message):
         if symbol in SYMBOLS:
             # decrypt this symbol
             symIndex = SYMBOLS.find(symbol)
-            plaintext += SYMBOLS[(symIndex -keyB) * modInverseOfKeyA % len(SYMBOLS)]
+            plaintext += SYMBOLS[(symIndex - keyB) * modInverseOfKeyA % len(SYMBOLS)]
         else:
             plaintext += symbol
     return plaintext
