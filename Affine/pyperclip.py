@@ -37,7 +37,7 @@ def _pasteWindows():
 def _copyWindows(text):
     GMEM_DDESHARE = 0x2000
     CF_UNICODETEXT = 13
-    d = ctypes.windll # cdll expects 4 more bytes in user32.OpenClipboard(None)
+    d = ctypes.windll  # cdll expects 4 more bytes in user32.OpenClipboard(None)
     try:  # Python 2
         if not isinstance(text, unicode):
             text = text.decode('mbcs')
