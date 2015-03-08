@@ -34,7 +34,7 @@ def checkValidKey(key):
         sys.exit('There is an error in the key or symbol set')
 
 
-def encrytMessage(key, message):
+def encryptMessage(key, message):
     return translateMessage(key, message, 'encrypt')
 
 
@@ -73,5 +73,5 @@ def getRandomKey():
     return ''.join(key)
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     main()
