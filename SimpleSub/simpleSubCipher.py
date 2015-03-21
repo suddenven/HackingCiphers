@@ -6,12 +6,14 @@ import random
 import pyperclip
 
 
-LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LETTERS = r""" !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY
+Z[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"""
 
 
 def main():
     myMessage = 'If a man is offered a fact which goes against his instincts, he will scrutinize it closely, and unless the evidence is overwhelming, he will refuse to believe it. If on the other hand, he is offered something which affords a reason for acting in accordance to his instincts, he will accept it even on the slightest evidence. the origin of myths is explained in this way. -Bertrand Russel'
-    myKey = 'LFWOAYUISVKMNXPBDCRJTQEGHZ'
+    myKey = r"""/{9@6hUf:q?_)^eTi|W1,NLD7xk(-
+SF>Iz0E=d;Bu#c]w~'VvHKmpJ+}s8y& XtP43.b[OA!*\Q<M%$ZgG52YloaRCn"`rj"""
     myMode = 'encrypt'
 
     checkValidKey(myKey)
@@ -58,11 +60,8 @@ def translateMessage(key, message, mode):
     for symbol in message:
         if symbol.upper() in charsA:
             # Encrypt/Decrypt the symbol
-            symIndex = charsA.find(symbol.upper())
-            if symbol.isupper():
-                translated += charsB[symIndex].upper()
-            else:
-                translated += charsB[symIndex].lower()
+            symIndex = charsA.find(symbol)
+            translated += charsB[symIndex]
         else:
             # symbol is not in LETTERS, just add it
             translated += symbol
