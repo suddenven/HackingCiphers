@@ -1,1 +1,9 @@
 *.pyc
+.idea/.name
+.idea/encodings.xml
+.idea/HackingCiphers.iml
+.idea/scopes/scope_settings.xml
+.idea/workspace.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/misc.xml
